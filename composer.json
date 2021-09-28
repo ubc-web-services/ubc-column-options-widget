@@ -1,0 +1,10 @@
+{
+  "name": "ubc-web-services/ubc-column-options-widget",
+  "description": "A Drupal 8 module to add a configurable two columns widget to CKeditor",
+  "type": "drupal-module",
+  "authors": [{
+    "name": "O'Toole, James",
+    "email": "james.otoole@ubc.ca"
+  }],
+  "require": {}
+}

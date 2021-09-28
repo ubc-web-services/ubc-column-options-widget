@@ -1,0 +1,6 @@
+# ubc_column_options_widget.libraries.yml
+
+column.options:
+  css:
+    layout:
+      css/ubc.column.options.css: {}

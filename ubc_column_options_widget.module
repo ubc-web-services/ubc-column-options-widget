@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * @file
+ * Contains ubc_column_options_widget.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function ubc_column_options_widget_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.ubc_column_options_widget':
+      $output = '';
+      $output .= '<h3>' . t('About UBC Column Options Widget') . '</h3>';
+      $output .= '<p>' . t('This module adds a columns widget to the CKEditor wysiwyg. This button allows the insertion of prebuilt html markup, styled to be in keeping with the UBC CLF (common look and feel) design specifications.') . '</p>';
+      return $output;
+    default:
+  }
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function ubc_column_options_widget_preprocess_page(&$variables) {
+  $variables['#attached']['library'][] = 'ubc_column_options_widget/column.options';
+}

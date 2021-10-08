@@ -1,4 +1,4 @@
-CKEDITOR.dialog.add('column-options-widget', function (editor) {
+CKEDITOR.dialog.add('column3-options-widget', function (editor) {
   return {
     title: 'Columns Widget',
     minWidth: 300,
@@ -17,6 +17,7 @@ CKEDITOR.dialog.add('column-options-widget', function (editor) {
           items: [
             ['Equal', 'align-equal'],
             ['Large left', 'align-large-left'],
+            ['Large center', 'align-large-center'],
             ['Large right', 'align-large-right']
           ],
           setup: function (widget) {

@@ -1,4 +1,4 @@
-.widget-column-options {
+.widget-columns-2 {
   box-sizing: border-box;
   margin: 10px;
   background: #eee;
@@ -7,15 +7,15 @@
   position: relative;
 }
 
-.widget-column-options .widget-region-one,
-.widget-column-options .widget-region-two {
+.widget-columns-2 .widget-region-one,
+.widget-columns-2 .widget-region-two {
   box-shadow: 0 1px 1px #ddd inset;
   border: 1px solid #cccccc;
   background: #fff;
   padding: 1em;
 }
 
-.widget-column-options:before {
+.widget-columns-2:before {
   background: none repeat scroll 0 0 #007eab;
   color: #fff;
   content: "Columns with options";
@@ -32,33 +32,56 @@
 
 @media (min-width: 768px) {
 
-  .widget-column-options .widget--md--grid {
+  .widget-columns-2 .widget--md--grid {
     display: grid;
     gap: 2rem;
     grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: auto;
   }
 
-  .widget-column-options.align-equal .widget-region-one,
-  .widget-column-options.align-equal .widget-region-two {
-    grid-column: span 6 / span 6;
+  .widget-columns-2.widget-gap-wide .widget--md--grid {
+    gap: 4rem;
   }
 
-  .widget-column-options.align-large-right .widget-region-one,
-  .widget-column-options.align-large-left .widget-region-two {
-    grid-column: span 4 / span 4;
+  .widget-columns-2.align-equal .widget--md--grid {
+    grid-template-areas:
+      'a a a a a a b b b b b b';
   }
 
-  .widget-column-options.align-large-left .widget-region-two {
-    grid-column-start: 9;
+  .widget-columns-2.align-large-left .widget--md--grid {
+    grid-template-areas:
+      'a a a a a a a a b b b b';
   }
 
-  .widget-column-options.align-large-left .widget-region-one,
-  .widget-column-options.align-large-right .widget-region-two {
-    grid-column: span 8 / span 8;
+  .widget-columns-2.align-large-right .widget--md--grid {
+    grid-template-areas:
+      'a a a a b b b b b b b b';
   }
 
-  .widget-column-options.align-large-right .widget-region-two {
-    grid-column-start: 5;
+  .widget-columns-2 .widget-region-one {
+    grid-area: a;
+  }
+
+  .widget-columns-2 .widget-region-two {
+    grid-area: b;
+  }
+
+  .widget-columns-2.widget-keylines .widget-region-one {
+    position: relative;
+  }
+
+  .widget-columns-2.widget-keylines .widget-region-one::after {
+    content: '';
+    right: -1rem;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    position: absolute;
+    background-color: #000;
+  }
+
+  .widget-columns-2.widget-gap-wide .widget-region-one::after {
+    right: -2rem;
   }
 
 }

@@ -63,7 +63,9 @@
     grid-area: d;
   }
 
-  .widget-columns-4.widget-keylines .widget-region-one {
+  .widget-columns-4.widget-keylines .widget-region-one,
+  .widget-columns-4.widget-keylines .widget-region-two,
+  .widget-columns-4.widget-keylines .widget-region-three {
     position: relative;
   }
 

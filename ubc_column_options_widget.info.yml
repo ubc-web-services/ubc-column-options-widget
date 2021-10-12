@@ -1,6 +1,6 @@
-name: UBC Column Options Widgets
+name: UBC Column Options Widget
 type: module
-description: This plugin adds column widgets with configurable sizing to the wysiwyg editor.
+description: This plugin adds a column widget with configurable sizing to the wysiwyg editor.
 package: UBC Web Services
 dependencies:
   - ckeditor

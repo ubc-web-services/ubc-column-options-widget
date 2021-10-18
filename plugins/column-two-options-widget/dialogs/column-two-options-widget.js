@@ -1,4 +1,4 @@
-CKEDITOR.dialog.add('column-options-widget', function (editor) {
+CKEDITOR.dialog.add('column-two-options-widget', function (editor) {
   return {
     title: 'Columns Widget',
     minWidth: 300,

@@ -1,30 +1,28 @@
 'use strict';
 (function () {
-  CKEDITOR.plugins.add('column3-options-widget', {
+  CKEDITOR.plugins.add('column-two-options-widget', {
     requires: 'widget',
-    icons: 'column3-options-widget',
+    icons: 'column-two-options-widget',
     init: function (editor) {
       // Register the editing dialog.
-      CKEDITOR.dialog.add('column3-options-widget', this.path + 'dialogs/column3-options-widget.js');
-      editor.addContentsCss(this.path + 'css/column3-options-widget.css');
-      editor.ui.addButton('column3-options-widget', {
+      CKEDITOR.dialog.add('column-two-options-widget', this.path + 'dialogs/column-two-options-widget.js');
+      editor.addContentsCss(this.path + 'css/column-two-options-widget.css');
+      editor.ui.addButton('column-two-options-widget', {
         label: 'Insert Columns with options',
-        icon: this.path + 'icons/column3-options-widget.png',
-        command: 'column3-options-widget'
+        icon: this.path + 'icons/column-two-options-widget.png',
+        command: 'column-two-options-widget'
       });
 
-      editor.widgets.add('column3-options-widget', {
-        template: '<div class="widget-column-options widget-columns-3 align-equal my-6">' +
+      editor.widgets.add('column-two-options-widget', {
+        template: '<div class="widget-column-options widget-columns-2 align-equal my-6">' +
         '<div class="widget--md--grid">' +
         '<div class="widget-region-one first-child--mt-0"><p>sample content</p></div>' +
         '<div class="widget-region-two first-child--mt-0"><p>sample content</p></div>' +
-        '<div class="widget-region-three first-child--mt-0"><p>sample content</p></div>' +
         '</div>',
-        allowedContent: 'div(!widget-column-options,!widget-columns-3,!align-*,my-*,widget-keylines,widget-gap-wide);' +
+        allowedContent: 'div(!widget-column-options,!widget-columns-2,!align-*,my-*,widget-keylines,widget-gap-wide);' +
         'div(!widget--md--grid);' +
         'div(!widget-region-one,first-child-*);' +
-        'div(!widget-region-two,first-child-*);' +
-        'div(!widget-region-three,first-child-*);',
+        'div(!widget-region-two,first-child-*);',
         requiredContent: 'div(widget-column-options)',
         editables: {
           col1: {
@@ -33,16 +31,13 @@
           col2: {
             selector: '.widget-region-two'
           },
-          col3: {
-            selector: '.widget-region-three'
-          },
         },
 
-        button: 'Add three columns with options',
-        dialog: 'column3-options-widget',
+        button: 'Add two columns with options',
+        dialog: 'column-two-options-widget',
 
         upcast: function (element) {
-          return element.name == 'div' && element.hasClass('widget-columns-3');
+          return element.name == 'div' && element.hasClass('widget-columns-2');
         },
 
         init: function () {
@@ -50,8 +45,6 @@
             this.setData('align', 'align-equal');
           if (this.element.hasClass('align-large-left'))
             this.setData('align', 'align-large-left');
-          if (this.element.hasClass('align-large-center'))
-            this.setData('align', 'align-large-center');
           if (this.element.hasClass('align-large-right'))
             this.setData('align', 'align-large-right');
           if (this.element.hasClass('my-4'))
@@ -71,7 +64,6 @@
         data: function () {
           this.element.removeClass('align-equal');
           this.element.removeClass('align-large-left');
-          this.element.removeClass('align-large-center');
           this.element.removeClass('align-large-right');
 
           this.element.removeClass('my-4');

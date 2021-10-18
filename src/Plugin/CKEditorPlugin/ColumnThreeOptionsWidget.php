@@ -6,21 +6,21 @@ use Drupal\editor\Entity\Editor;
 use Drupal\ckeditor\CKEditorPluginBase;
 
 /**
- * Defines the "column4-options-widget" plugin.
+ * Defines the "column-three-options-widget" plugin.
  *
  * @CKEditorPlugin(
- *   id = "column4-options-widget",
- *   label = @Translation("4 Columns with Options Widget"),
+ *   id = "column-three-options-widget",
+ *   label = @Translation("3 Columns with Options Widget"),
  *   module = "ubc_column_options_widget"
  * )
  */
-class Column4OptionsWidget extends CKEditorPluginBase {
+class ColumnThreeOptionsWidget extends CKEditorPluginBase {
 
   /**
    * Implements \Drupal\ckeditor\Plugin\CKEditorPluginInterface::getFile().
    */
   public function getFile() {
-    return drupal_get_path('module', 'ubc_column_options_widget') . '/plugins/column4-options-widget/plugin.js';
+    return drupal_get_path('module', 'ubc_column_options_widget') . '/plugins/column-three-options-widget/plugin.js';
   }
 
   /**
@@ -42,9 +42,9 @@ class Column4OptionsWidget extends CKEditorPluginBase {
    */
   public function getButtons() {
     return [
-      'column4-options-widget' => [
-        'label' => $this->t('4 Columns with options Widget'),
-        'image' => drupal_get_path('module', 'ubc_column_options_widget') . '/plugins/column4-options-widget/icons/column4-options-widget.png',
+      'column-three-options-widget' => [
+        'label' => $this->t('3 Columns with options Widget'),
+        'image' => drupal_get_path('module', 'ubc_column_options_widget') . '/plugins/column-three-options-widget/icons/column-three-options-widget.png',
       ],
     ];
   }

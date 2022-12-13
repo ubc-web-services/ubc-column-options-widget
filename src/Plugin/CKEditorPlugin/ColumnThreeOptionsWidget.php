@@ -20,7 +20,7 @@ class ColumnThreeOptionsWidget extends CKEditorPluginBase {
    * Implements \Drupal\ckeditor\Plugin\CKEditorPluginInterface::getFile().
    */
   public function getFile() {
-    return drupal_get_path('module', 'ubc_column_options_widget') . '/plugins/column-three-options-widget/plugin.js';
+    return \Drupal::service('extension.list.module')->getPath('ubc_column_options_widget') . '/plugins/column-three-options-widget/plugin.js';
   }
 
   /**
@@ -44,7 +44,7 @@ class ColumnThreeOptionsWidget extends CKEditorPluginBase {
     return [
       'column-three-options-widget' => [
         'label' => $this->t('3 Columns with options Widget'),
-        'image' => drupal_get_path('module', 'ubc_column_options_widget') . '/plugins/column-three-options-widget/icons/column-three-options-widget.png',
+        'image' => \Drupal::service('extension.list.module')->getPath('ubc_column_options_widget') . '/plugins/column-three-options-widget/icons/column-three-options-widget.png',
       ],
     ];
   }

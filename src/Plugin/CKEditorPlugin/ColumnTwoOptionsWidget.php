@@ -20,7 +20,7 @@ class ColumnTwoOptionsWidget extends CKEditorPluginBase {
    * Implements \Drupal\ckeditor\Plugin\CKEditorPluginInterface::getFile().
    */
   public function getFile() {
-    return drupal_get_path('module', 'ubc_column_options_widget') . '/plugins/column-two-options-widget/plugin.js';
+    return \Drupal::service('extension.list.module')->getPath('ubc_column_options_widget') . '/plugins/column-two-options-widget/plugin.js';
   }
 
   /**
@@ -44,7 +44,7 @@ class ColumnTwoOptionsWidget extends CKEditorPluginBase {
     return [
       'column-two-options-widget' => [
         'label' => $this->t('Columns with options Widget'),
-        'image' => drupal_get_path('module', 'ubc_column_options_widget') . '/plugins/column-two-options-widget/icons/column-two-options-widget.png',
+        'image' => \Drupal::service('extension.list.module')->getPath('ubc_column_options_widget') . '/plugins/column-two-options-widget/icons/column-two-options-widget.png',
       ],
     ];
   }

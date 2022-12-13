@@ -20,7 +20,7 @@ class ColumnFourOptionsWidget extends CKEditorPluginBase {
    * Implements \Drupal\ckeditor\Plugin\CKEditorPluginInterface::getFile().
    */
   public function getFile() {
-    return drupal_get_path('module', 'ubc_column_options_widget') . '/plugins/column-four-options-widget/plugin.js';
+    return \Drupal::service('extension.list.module')->getPath('ubc_column_options_widget') . '/plugins/column-four-options-widget/plugin.js';
   }
 
   /**
@@ -44,7 +44,7 @@ class ColumnFourOptionsWidget extends CKEditorPluginBase {
     return [
       'column-four-options-widget' => [
         'label' => $this->t('4 Columns with options Widget'),
-        'image' => drupal_get_path('module', 'ubc_column_options_widget') . '/plugins/column-four-options-widget/icons/column-four-options-widget.png',
+        'image' => \Drupal::service('extension.list.module')->getPath('ubc_column_options_widget') . '/plugins/column-four-options-widget/icons/column-four-options-widget.png',
       ],
     ];
   }
